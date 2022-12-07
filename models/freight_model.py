@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class Fretes(BaseModel):
+class Freight(BaseModel):
     id: int
     nome: str
     constante_calculo: float
@@ -10,7 +10,7 @@ class Fretes(BaseModel):
     largura_maxima: int
     prazo_entrega: str
 
-    class Config:
+    class Type_freight:
         schema_extra = {
             "example": {
                 "id": 1,

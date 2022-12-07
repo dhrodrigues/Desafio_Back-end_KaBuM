@@ -1,13 +1,13 @@
 from pydantic import BaseModel
 from typing import Dict
 
-class Fretes(BaseModel):
+class Pack(BaseModel):
     id: int
     dimensoes: Dict [str, int]
     peso: int
 
 
-    class Config:
+    class Type_pack:
         schema_extra = {
             "teste": {
                 "id": 1,

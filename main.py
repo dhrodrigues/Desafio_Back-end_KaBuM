@@ -1,14 +1,11 @@
 import uvicorn
 from fastapi import FastAPI
 from routes.freight import freight_router
+from routes.pack import pack_router
 
 app = FastAPI()
 
-
-@app.get("/")
-def root() -> str:
-    return "Desafio Kabum!"
-
+app.include_router(pack_router, prefix="/Pack")
 app.include_router(freight_router, prefix="/Freight")        
 
         

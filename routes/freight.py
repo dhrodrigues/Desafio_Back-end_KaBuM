@@ -30,10 +30,10 @@ freights = [{
 @freight_router.post("/Freight")
 def Freight(data:Freight) -> dict:
     if data.id in freights:
-        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Uma companhia com esse id já existe.")
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Existente.")
 
     freights[data.id] = data
-    return {"mensagem": "Companhia registrada com sucesso!"}
+    return {"mensagem": "Cadastro com Sucesso!"}
 
 
 @freight_router.get("/Freight")

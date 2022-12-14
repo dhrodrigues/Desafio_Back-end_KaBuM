@@ -10,7 +10,7 @@ class Freight(BaseModel):
     largura_maxima: int
     prazo_entrega: str
 
-    class Type_freight:
+    class Config:
         schema_extra = {
             "example": {
                 "id": 1,

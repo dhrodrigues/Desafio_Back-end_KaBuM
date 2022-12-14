@@ -5,8 +5,9 @@ from routes.pack import pack_router
 
 app = FastAPI()
 
-app.include_router(pack_router, prefix="/Pack")
-app.include_router(freight_router, prefix="/Freight")        
+
+app.include_router(freight_router, prefix="/freightage")    
+app.include_router(pack_router, prefix="/pack")    
 
         
 if __name__ == "__main__":

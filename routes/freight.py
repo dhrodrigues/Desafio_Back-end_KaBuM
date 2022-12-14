@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status,HTTPException
 from models.freight_model import Freight
 
-freight_router = APIRouter(tags=["Type_Freight"])
+freight_router = APIRouter(tags=["Freightage"])
 
 freights = [{
                 "id": 1,
@@ -27,7 +27,7 @@ freights = [{
             }
 ]
 
-@freight_router.post("/Freight")
+@freight_router.post("/freightage")
 def Freight(data:Freight) -> dict:
     if data.id in freights:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Existente.")

@@ -1,7 +1,8 @@
 from fastapi import APIRouter, status,HTTPException
-from models.freight_model import Freight
+from domain.freight.freight_model import Freight
 
-freight_router = APIRouter(tags=["Freightage"])
+
+router = APIRouter()
 
 freights = [{
                 "id": 1,
@@ -27,15 +28,16 @@ freights = [{
             }
 ]
 
-@freight_router.post("/freightage")
-def Freight(data:Freight) -> dict:
+
+@router.post("/company")
+def new_freight(data:Freight) -> dict:
     if data.id in freights:
-        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Existente.")
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Uma companhia com esse id já existe.")
 
     freights[data.id] = data
-    return {"mensagem": "Cadastro com Sucesso!"}
+    return {"mensagem": "Companhia registrada com sucesso!"}
 
 
-@freight_router.get("/Freight")
-def Freight():
+@router.get("/company")
+def get_freight():
     return freights

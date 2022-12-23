@@ -1,13 +1,11 @@
 import uvicorn
+from typing import Dict
 from fastapi import FastAPI
-from routes.freight import freight_router
-from routes.pack import pack_router
+from config.routes import setup_routes
+
 
 app = FastAPI()
-
-
-app.include_router(freight_router, prefix="/freightage")    
-app.include_router(pack_router, prefix="/pack")    
+setup_routes(app)
 
         
 if __name__ == "__main__":

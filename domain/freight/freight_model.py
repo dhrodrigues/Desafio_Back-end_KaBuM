@@ -24,3 +24,5 @@ class Freight(BaseModel):
 
             }
         }
+        
+        
